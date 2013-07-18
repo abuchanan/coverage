@@ -47,3 +47,7 @@ def test_merge():
     b['bar'].extend([1, 2, 3, 4])
 
     c = a + b
+
+    x = array('L')
+    x.extend([2, 4, 6, 8])
+    eq_(c['foo'], x)
