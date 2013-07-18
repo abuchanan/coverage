@@ -44,10 +44,14 @@ def test_merge():
 
     b = Coverage()
     b['foo'].extend([1, 2, 3, 4])
-    b['bar'].extend([1, 2, 3, 4])
+    b['bar'].extend([2, 2, 3, 4])
 
     c = a + b
 
     x = array('L')
     x.extend([2, 4, 6, 8])
     eq_(c['foo'], x)
+
+    x = array('L')
+    x.extend([3, 4, 6, 8])
+    eq_(c['bar'], x)
